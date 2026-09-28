@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Produtos</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="brand">Sistema de Cadastro</div>
+            <div class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="clientes.html">Clientes</a>
+                <a href="fornecedores.html">Fornecedores</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="vendas.html">Vendas</a>
+                <a href="estoque.html">Estoque</a>
+            </div>
+            <div id="userRole" class="user-role">Acesso: Público</div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Cadastro de produtos</h2>
+            <button class="btn btn-primary" onclick="window.location.href='index.html'">Voltar ao dashboard</button>
+        </div>
+
+        <div class="layout">
+            <section class="panel form-panel">
+                <h3>Adicionar produto</h3>
+                <form id="cadastroProdutoForm" class="form-grid">
+                    <div>
+                        <label for="nome">Nome</label>
+                        <input id="nome" name="nome" type="text" required>
+                    </div>
+                    <div>
+                        <label for="categoria">Categoria</label>
+                        <input id="categoria" name="categoria" type="text" required>
+                    </div>
+                    <div>
+                        <label for="marca">Marca</label>
+                        <input id="marca" name="marca" type="text" required>
+                    </div>
+                    <div>
+                        <label for="preco">Preço</label>
+                        <input id="preco" name="preco" type="number" step="0.01" required>
+                    </div>
+                    <div>
+                        <label for="estoque_minimo">Estoque mínimo</label>
+                        <input id="estoque_minimo" name="estoque_minimo" type="number" required>
+                    </div>
+                    <div>
+                        <label for="imagem">Imagem (URL ou caminho)</label>
+                        <input id="imagem" name="imagem" type="text" value="image/produto-1.png">
+                    </div>
+                    <div>
+                        <label for="descricao">Descrição</label>
+                        <textarea id="descricao" name="descricao" rows="4"></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Salvar produto</button>
+                </form>
+            </section>
+
+            <section class="panel table-panel">
+                <h3>Catálogo de produtos</h3>
+                <div id="produtosGrid" class="card-grid"></div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

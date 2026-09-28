@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estoque</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="brand">Sistema de Cadastro</div>
+            <div class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="clientes.html">Clientes</a>
+                <a href="fornecedores.html">Fornecedores</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="vendas.html">Vendas</a>
+                <a href="estoque.html">Estoque</a>
+            </div>
+            <div id="userRole" class="user-role">Acesso: Público</div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h2>Controle de estoque</h2>
+            <button class="btn btn-primary" onclick="window.location.href='index.html'">Voltar ao dashboard</button>
+        </div>
+
+        <div class="layout">
+            <section class="panel form-panel">
+                <h3>Movimentação de estoque</h3>
+                <form id="cadastroEstoqueForm" class="form-grid">
+                    <div>
+                        <label for="produto">Produto</label>
+                        <input id="produto" name="produto" type="text" required>
+                    </div>
+                    <div>
+                        <label for="quantidade_entrada">Quantidade de entrada</label>
+                        <input id="quantidade_entrada" name="quantidade_entrada" type="number" required>
+                    </div>
+                    <div>
+                        <label for="quantidade_saida">Quantidade de saída</label>
+                        <input id="quantidade_saida" name="quantidade_saida" type="number" required>
+                    </div>
+                    <div>
+                        <label for="saldo">Saldo</label>
+                        <input id="saldo" name="saldo" type="number" required>
+                    </div>
+                    <div>
+                        <label for="data_movimento">Data da movimentação</label>
+                        <input id="data_movimento" name="data_movimento" type="date" required>
+                    </div>
+                    <div>
+                        <label for="observacao">Observação</label>
+                        <textarea id="observacao" name="observacao" rows="4"></textarea>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Salvar movimentação</button>
+                </form>
+            </section>
+
+            <section class="panel table-panel">
+                <h3>Histórico de estoque</h3>
+                <div class="table-wrap">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Produto</th>
+                                <th>Entrada</th>
+                                <th>Saída</th>
+                                <th>Saldo</th>
+                                <th>Data</th>
+                                <th>Observação</th>
+                                <th>Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="estoqueTableBody"></tbody>
+                    </table>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Cadastro</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="brand">Sistema de Cadastro</div>
+            <div class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="clientes.html">Clientes</a>
+                <a href="fornecedores.html">Fornecedores</a>
+                <a href="produtos.html">Produtos</a>
+                <a href="vendas.html">Vendas</a>
+                <a href="estoque.html">Estoque</a>
+            </div>
+            <button id="userRole" class="user-role" type="button" title="Clique para sair">Acesso: Público</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <section class="hero">
+            <div class="panel hero-copy">
+                <span class="kicker">Gestão integrada</span>
+                <h1>Controle de clientes, produtos, vendas e estoque em uma única plataforma</h1>
+                <p>O sistema foi pensado para atender operações de cadastro, acompanhamento de vendas e gestão logística com design moderno, responsivo e alinhado à LGPD.</p>
+                <div class="hero-actions">
+                    <button class="btn btn-primary" onclick="document.getElementById('loginForm').scrollIntoView({behavior: 'smooth'})">Acessar sistema</button>
+                    <button class="btn btn-secondary" onclick="window.location.href='produtos.html'">Ver produtos</button>
+                </div>
+                <div class="lgpd-banner">
+                    LGPD: os dados são tratados com atenção à privacidade, controle de acesso e responsabilidade digital.
+                </div>
+            </div>
+
+            <div class="panel auth-panel">
+                <form id="loginForm" class="form-grid">
+                    <div>
+                        <label for="usuario">Usuário</label>
+                        <input id="usuario" name="usuario" type="text" placeholder="Digite seu usuário" required>
+                    </div>
+                    <div>
+                        <label for="senha">Senha</label>
+                        <input id="senha" name="senha" type="password" placeholder="Digite sua senha" required>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Entrar</button>
+                    <button id="showRegister" class="btn btn-secondary" type="button">Criar uma conta</button>
+                    <small id="loginStatus">Usuários de teste: admin / admin123 e convidado / convidado123</small>
+                </form>
+                <form id="registerForm" class="form-grid hidden">
+                    <h3>Criar uma conta</h3>
+                    <div>
+                        <label for="novoUsuario">Usuário</label>
+                        <input id="novoUsuario" name="usuario" type="text" required>
+                    </div>
+                    <div>
+                        <label for="novaSenha">Senha</label>
+                        <input id="novaSenha" name="senha" type="password" minlength="6" required>
+                    </div>
+                    <button class="btn btn-primary" type="submit">Cadastrar conta</button>
+                    <button id="showLogin" class="btn btn-secondary" type="button">Voltar para entrar</button>
+                    <small id="registerStatus">A nova conta será criada como Convidado.</small>
+                </form>
+                <div id="dashboardSummary" class="hidden">
+                    <h3>Resumo do sistema</h3>
+                    <div class="card-grid">
+                        <article class="summary-card">
+                            <div class="tag">Clientes</div>
+                            <div id="totalClients" class="value">0</div>
+                        </article>
+                        <article class="summary-card">
+                            <div class="tag">Fornecedores</div>
+                            <div id="totalSuppliers" class="value">0</div>
+                        </article>
+                        <article class="summary-card">
+                            <div class="tag">Produtos</div>
+                            <div id="totalProducts" class="value">0</div>
+                        </article>
+                        <article class="summary-card">
+                            <div class="tag">Vendas</div>
+                            <div id="totalSales" class="value">R$ 0,00</div>
+                        </article>
+                    </div>
+                    <button id="logoutButton" class="btn btn-secondary" type="button">Sair do administrador</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
